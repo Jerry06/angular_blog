@@ -1,0 +1,26 @@
+<menu>Bog loading...</menu>
+<div class="container">
+  <div class="row">
+    <div #fbscript></div>
+    <br>
+    <div *ngIf="!blog" class="col-lg-8">Not Found !! Try other blog post !</div>
+    <div *ngIf="blog" class="col-lg-8">
+      <hr>
+      <h1>{{blog.title}}</h1>
+      <!-- Date/Time -->
+      <p><span class="glyphicon glyphicon-time"></span> Updated on {{blog.lastModifiedDate | date : 'short'}}</p>
+
+      <hr>
+      <!-- Post Content -->
+      <div [innerHTML]="blog.content" highlight-js-content=".highlight"></div>
+      <hr>
+      <div id="fb-root"></div>
+      <div class="fb-comments"></div>
+    </div>
+
+    <!-- Blog Sidebar Widgets Column -->
+    <blog_widgets></blog_widgets>
+  </div>
+  <hr>
+  <footer>Bog loading...</footer>
+</div>

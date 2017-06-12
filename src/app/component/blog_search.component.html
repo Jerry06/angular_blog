@@ -1,0 +1,13 @@
+<br>
+<br>
+<div class="well">
+  <h4>Blog Search</h4>
+  <div class="input-group">
+    <input #box type="text" class="form-control" (keyup.enter)="onEnter(box.value)" [(ngModel)]="searchText">
+    <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"  (click)="search()">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+  </div>
+</div>

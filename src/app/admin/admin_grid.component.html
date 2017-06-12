@@ -1,0 +1,46 @@
+<div id="page-wrapper">
+  <!-- /.row -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>
+                  Title
+                </th>
+                <th>
+                  Summary
+                </th>
+                <th>
+                  Updated Date
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let blog of page?.content">
+                <td class="text-muted">{{blog.title}}</td>
+                <td>{{blog.summary}}</td>
+                <td>{{blog.lastModifiedDate | date : 'short'}}</td>
+                <td><a target="_blank" [routerLink]="['../../admin/post', blog.id]">Edit</a></td>
+                <td><a style="cursor: pointer;" (click)="deleteBlog(blog.id)">Delete</a></td>
+
+
+                <!--<a class="btn btn-primary" [routerLink]="['/blog', blog.id]">Read More <span-->
+                <!--class="glyphicon glyphicon-chevron-right"></span></a>-->
+
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-lg-12 -->
+  </div>
+  <!-- /.row -->
+</div>
+
+

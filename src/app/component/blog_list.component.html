@@ -1,0 +1,52 @@
+<menu>Bog loading...</menu>
+<div class="container">
+  <div class="row">
+
+    <!-- Blog Entries Column -->
+    <div class="col-md-8">
+
+      <h1 class="page-header"></h1>
+      <!--Page Heading-->
+      <!--<small>Secondary Text</small>-->
+
+      <div *ngIf="searching" style="color: red">Found {{page?.totalElements}} results</div>
+      <div *ngFor="let blog of page?.content">
+        <!-- First Blog Post -->
+        <h2>
+          <a [routerLink]="['/blog', blog.id]">{{blog.title}}</a>
+        </h2>
+        <p><span class="glyphicon glyphicon-time"></span> Posted on {{blog.createdDate | date : 'short'}}</p>
+        <hr>
+        <p [innerHTML]="blog.summary"></p>
+        <hr>
+
+        <a class="btn btn-primary" [routerLink]="['/blog', blog.id]">Read More <span
+          class="glyphicon glyphicon-chevron-right"></span></a>
+        <hr>
+      </div>
+      <!-- Pager -->
+      <ul class="pager">
+        <li *ngIf="page?.first == false" class="previous">
+          <!--<a routerLink="/blog"  href="blog?page={{page?.number - 1}}&size={{page?.size}}">&larr; Newer</a>-->
+          <!--<a [routerLink]="['blog']" [queryParams]="{ page: page?.number-1, size: page?.size  }">Go to Page 99</a>-->
+          <a [routerLink]="['./']" [queryParams]="{ page: page?.number-1, size: page?.size  }">&larr; Newer</a>
+        </li>
+        <li *ngIf="page?.last == false" class="next">
+          <!--<a href="blog?page={{page?.number + 1}}&size={{page?.size}}">Older &rarr;</a>-->
+          <a [routerLink]="['./']" [queryParams]="{ page: page?.number+1, size: page?.size  }">Older &rarr;</a>
+        </li>
+      </ul>
+
+
+    </div>
+
+    <!-- Blog Sidebar Widgets Column -->
+    <blog_widgets></blog_widgets>
+  </div>
+  <hr>
+  <footer>Bog loading...</footer>
+</div>
+
+
+
+
