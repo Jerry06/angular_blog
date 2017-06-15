@@ -6,8 +6,8 @@ import {PaginationPage, PaginationPropertySort} from '../model/pagination';
 
 @Injectable()
 export class BlogService {
-  private baseUrl: string = 'http://lazicoder.com:8123/api';
-  private baseUrl1: string = 'http://lazicoder.com:8123';
+  private baseUrl: string = 'http://lazicoder.com/api';
+  private baseUrl1: string = 'http://lazicoder.com';
 
   constructor(private http: Http) {
   }
