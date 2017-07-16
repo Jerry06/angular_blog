@@ -82,6 +82,7 @@
     "@angular/router": "~4.1.2",
     "@angularclass/hmr": "~1.2.2",
     "@angularclass/hmr-loader": "~3.0.2",
+    "@types/angular-file-saver": "^1.1.2",
     "angular2-highlight-js": "^5.0.1",
     "angular2-tinymce": "^2.1.2",
     "core-js": "^2.4.1",

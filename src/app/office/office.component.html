@@ -1,0 +1,51 @@
+<div id="wrapper">
+
+  <div id="page-wrapper">
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="exampleInputFile">Upload a file</label>
+              <input (change)="onChange($event)" type="file" id="exampleInputFile">
+              <!--<p class="help-block">Example block-level help text here.</p></div>-->
+              <br>
+            </div>
+            <div class="form-group">
+              <button (click)='save()'>Save</button>
+              <!--<p class="help-block">Example block-level help text here.</p></div>-->
+              <br>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>
+                    FileName
+                  </th>
+                  <th>
+                    Content
+                  </th>
+                  <th>
+                    Last updated
+                  </th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th>Grid behavior</th>
+                  <td>Horizontal at all times</td>
+                  <td>Collapsed to start, horizontal above breakpoints</td>
+                  <td><a style="cursor: pointer;">Delete</a> <a style="cursor: pointer;">Select</a></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
